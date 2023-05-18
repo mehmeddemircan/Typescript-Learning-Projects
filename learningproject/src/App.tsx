@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import Todoinput from './components/todoinput';
 import { TodoObject } from './types/TodoType';
+import Todolist from './components/todolist';
 
 
 const App : React.FC = () =>  {
@@ -18,13 +19,17 @@ const App : React.FC = () =>  {
     }
     setTodo("")
   }
+  
+  const deleteTodo = (id : number) => {
+    setTodos(todos.filter((item) => item.id != id))
+  }
+
+ 
 
   return (
     <div className="App">
       <Todoinput addTodo={addTodo}  todo={todo} setTodo={setTodo} />
-      {todos.map((item) => (
-        <h4>{item.message} - {item.id}</h4>
-      ))}
+     <Todolist todos={todos} deleteTodo={deleteTodo} />
     </div>
   );
 }
