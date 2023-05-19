@@ -1,11 +1,8 @@
 import React from 'react'
+import { IProps } from '../types/TodoType'
 
 
-interface IProps {
-    todo : string,
-    setTodo : React.Dispatch<React.SetStateAction<string>>
-    addTodo : () => void
-}
+
 
 const Todoinput:React.FC<IProps> = ({todo,setTodo, addTodo}) => {
   return (
