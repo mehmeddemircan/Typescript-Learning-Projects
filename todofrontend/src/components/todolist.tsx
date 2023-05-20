@@ -1,9 +1,12 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { TodoList, TodoObject } from '../types/TodoType';
 import {  List } from 'antd';
-
+import {useDispatch , useSelector} from 'react-redux'
+import { GetAllTodo } from '../redux/actions/TodoActions';
 
 const Todolist: React.FC<TodoList> = ({todos,deleteTodo}) => {
+
+
   return (
     <Fragment>
 

@@ -28,6 +28,7 @@ const App : React.FC = () =>  {
 
   return (
     <div className="App">
+   
       <Todoinput addTodo={addTodo}  todo={todo} setTodo={setTodo} />
      <Todolist todos={todos} deleteTodo={deleteTodo} />
     </div>
